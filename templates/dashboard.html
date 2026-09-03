@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>System Health Monitor</title>
+    </head>
+    <body>
+        <h1>System Health Monitor</h1>
+        {% if stats %}
+        <ul>
+            <li>Last updated (UTC): {{ stats['timestamp'] }}</li>
+            <li>CPU: {{ stats['cpu_percent'] }}%</li>
+            <li>Memory: {{ stats['memory_percent'] }}%</li>
+            <li>Disk: {{ stats['disk_percent'] }}%</li>
+        </ul>
+        {% else %}
+        <p>No Data logged yet.</p>
+        {%endif%}
+    </body>
+</html>
